@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/saireddy/Documents/react-project/timesheet/modules/dashboard/page.tsx"],"sourcesContent":["'use client';\n\n\n\nexport default function DashboardPage() {\n  return (\n    <>\n      <div>\n        <h1 className='text-3xl font-bold'>Dashboard</h1>\n      </div>\n    </>\n  );\n}\n"],"names":[],"mappings":";;;;;AAAA;;AAIe,SAAS;IACtB,qBACE;kBACE,cAAA,4RAAC;sBACC,cAAA,4RAAC;gBAAG,WAAU;0BAAqB;;;;;;;;;;;;AAI3C"}}]
-}

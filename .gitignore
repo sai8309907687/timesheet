@@ -80,3 +80,6 @@ encore.dev/
 *.log
 .cache/
 
+# Next.js
+.next/
+out/
