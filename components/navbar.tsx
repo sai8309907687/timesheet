@@ -99,11 +99,20 @@ export const Navbar = ({ onToggle }: { onToggle: () => void }) => {
       {isSettingsOpen && (
         <dialog className='modal modal-open'>
           <div className='modal-box'>
-            <h3 className='font-bold text-lg mb-4'>{t("settings")}</h3>
-            <SettingsContent />
-            <div className='modal-action'>
-              <button className="btn" onClick={() => setIsSettingsOpen(false)}>{t("close")}</button>
+            <div className='flex items-center justify-between mb-2'>
+              <div>
+                <h3 className='font-bold text-primary text-xl'>{t("settings")}</h3>
+              </div>
+              <div>
+                <TypeIcon name="X" className="text-secondary" onClick={() => setIsSettingsOpen(false)} />
+              </div>
+
             </div>
+
+            <SettingsContent />
+            {/* <div className='modal-action'>
+              <button className="btn" onClick={() => setIsSettingsOpen(false)}>{t("close")}</button>
+            </div> */}
           </div>
           <form method='dialog' className='modal-backdrop'>
             <button onClick={() => setIsSettingsOpen(false)}>{t("close")}</button>
