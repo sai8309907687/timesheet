@@ -1,0 +1,19 @@
+{
+  "welcome": "टाइमशीट में आपका स्वागत है",
+  "login": "लॉगिन",
+  "email": "ईमेल",
+  "password": "पासवर्ड",
+  "signIn": "साइन इन करें",
+  "save": "सहेजें",
+  "cancel": "रद्द करें",
+  "dashboard": "डैशबोर्ड",
+  "profile": "प्रोफ़ाइल",
+  "settings": "सेटिंग्स",
+  "logout": "लॉगआउट",
+  "required": "आवश्यक",
+  "somethingWentWrong": "कुछ गलत हो गया",
+  "theme": "थीम",
+  "language": "भाषा",
+  "light": "लाइट",
+  "dark": "डार्क"
+}

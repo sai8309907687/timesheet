@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@plugin "daisyui" {
+  themes:
+    light --default,
+    dark --prefersdark;
+}
+
+@property --radialprogress {
+  syntax: "<percentage>";
+  inherits: true;
+  initial-value: 0%;
+}
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --color-bg-light: #e8f0ff;
+  --color-bg-dark: #1f2937;
+  --bg-image: url("/world-map.svg");
+  --color-pink-primary: #ec4899;
+  --color-pink-hover: #db2777;
+}
+
+:root[data-theme="light"] {
+  --background: var(--color-bg-light);
+  --foreground: #000000;
+  --card-bg: #ffffff;
+  --card-border: #e5e7eb;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+:root[data-theme="dark"] {
+  --background: var(--color-bg-dark);
+  --foreground: #ffffff;
+  --card-bg: #000000;
+  --card-border: #374151;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+/* Global Card & Hardcoded Color Fixes */
+.card, .bg-white, .bg-gray-50 {
+  background-color: var(--card-bg) !important;
+  border-color: var(--card-border) !important;
+  border-radius: 0.75rem !important;
+  /* rounded-xl match to image */
+}
+
+/* Dashboard-level padding (avoid deep nesting) */
+main .card,
+section>.bg-white,
+section>.bg-gray-50 {
+  padding: 1.5rem !important;
+  /* padding match to image */
+}
+
+:root[data-theme="dark"] .text-black,
+:root[data-theme="dark"] .text-gray-800,
+:root[data-theme="dark"] .text-gray-700,
+:root[data-theme="dark"] .text-gray-600 {
+  color: var(--foreground) !important;
+}
+
+:root[data-theme="dark"] .text-gray-400,
+:root[data-theme="dark"] .text-gray-500 {
+  color: #9ca3af !important;
+  /* light gray for subtext in dark mode */
+}
+
+*:focus,
+*:focus-visible,
+*:focus-within {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+@layer utilities {
+  .bg-auth-light {
+    background-image: var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .bg-auth-dark {
+    background-image: var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+  }
+
+  /* Override align-items for input as requested */
+  .input {
+    align-items: unset;
+  }
+}
