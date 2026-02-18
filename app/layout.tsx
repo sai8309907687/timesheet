@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    title: 'Antweb',
-    description: 'Antweb',
+    title: 'Timesheet',
+    description: 'Timesheet',
 };
 
 export default function RootLayout({
@@ -28,19 +28,11 @@ export default function RootLayout({
     const themeInitScript = `
     (function() {
       try {
-        var storedTheme = localStorage.getItem('AS-THEME');
-        var theme = 'light';
-        if (storedTheme) {
-             theme = storedTheme.replace(/['"]+/g, '');
-        }
-        var finalTheme = (theme === 'dark' || theme === 'night') ? 'dark' : 'light';
+        // Always start with light theme as default
+        var finalTheme = 'light';
 
         document.documentElement.setAttribute('data-theme', finalTheme);
-        if (finalTheme === 'dark') {
-          document.documentElement.classList.add('dark');
-        } else {
-          document.documentElement.classList.remove('dark');
-        }
+        document.documentElement.classList.remove('dark');
       } catch (e) {}
     })();
   `;

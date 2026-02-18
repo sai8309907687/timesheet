@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
 
 // import { AppRouter } from '@/utils/app.router';
 // import AstroPeaceImage from '@/public/assets/images/footer-logo.png';
@@ -9,6 +10,8 @@ import InstagramImage from '@/public/assets/images/instagram.png';
 import FacebookImage from '@/public/assets/images/facebook.png';
 
 const FooterComponent = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className='w-full bg-primary flex flex-col items-center py-10 lg:py-16 space-y-8'>
       <div className='w-full max-w-screen-xl text-center md:text-left px-4 md:px-8'>
@@ -17,17 +20,17 @@ const FooterComponent = () => {
           {/* Links as single line */}
           <div className='flex flex-wrap justify-center gap-2 text-xs mb-4'>
             <Link className='text-white hover:underline' href='/astrologers/astrologers'>
-              Astrologers
+              {t("astrologers")}
             </Link>
             <Link className='text-white hover:underline' href='/offerings'>
-              Offerings
+              {t("offerings")}
             </Link>
             <Link
               className='text-white hover:underline'
-              href='https://www.youtube.com/@antweb'
+              href='https://www.youtube.com/@timesheet'
               target='_blank'
             >
-              Journey
+              {t("journey")}
             </Link>
             {/* <Link className='text-white hover:underline' href={AppRouter.ABOUTUS}>
               About Us
@@ -36,13 +39,13 @@ const FooterComponent = () => {
               Contact Us
             </Link> */}
             <Link className='text-white hover:underline' href='/terms-conditions'>
-              Terms
+              {t("terms")}
             </Link>
             <Link className='text-white hover:underline' href='/privacy-policy'>
-              Privacy
+              {t("privacy")}
             </Link>
             <Link className='text-white hover:underline' href='/returns-refunds'>
-              Refunds
+              {t("refunds")}
             </Link>
             {/* <Link className='text-white hover:underline' href={AppRouter.PRIVACY_POLICIES}>
               Pricing
@@ -51,15 +54,15 @@ const FooterComponent = () => {
 
           {/* Follow Us On - Now at the bottom */}
           <div className='flex flex-col items-center mt-4'>
-            <h2 className='text-white text-xs font-semibold mb-1'>Follow Us On</h2>
+            <h2 className='text-white text-xs font-semibold mb-1'>{t("followUs")}</h2>
             <div className='flex gap-2'>
-              <Link href='https://www.youtube.com/@antweb' target='_blank'>
+              <Link href='https://www.youtube.com/@timesheet' target='_blank'>
                 <Image alt='YouTube' className='h-4' src={YoutubeImage.src} />
               </Link>
-              <Link href='https://www.instagram.com/ant.web/' target='_blank'>
+              <Link href='https://www.instagram.com/timesheet/' target='_blank'>
                 <Image alt='Instagram' className='h-4' src={InstagramImage.src} />
               </Link>
-              <Link href='https://www.facebook.com/antweb' target='_blank'>
+              <Link href='https://www.facebook.com/timesheet' target='_blank'>
                 <Image alt='Facebook' className='h-4' src={FacebookImage.src} />
               </Link>
             </div>
@@ -77,35 +80,35 @@ const FooterComponent = () => {
           </div>
 
           <div className='flex flex-col w-full space-y-4'>
-            <h2 className='text-2xl font-semibold text-white mb-4'>Services</h2>
+            <h2 className='text-2xl font-semibold text-white mb-4'>{t("services")}</h2>
             <ul className='space-y-1'>
               <li>
                 <Link
                   className='text-md text-white hover:underline'
                   href='/astrologers/astrologers'
                 >
-                  Astrologers
+                  {t("astrologers")}
                 </Link>
               </li>
               <li>
                 <Link className='text-md text-white hover:underline' href='/offerings'>
-                  Offerings
+                  {t("offerings")}
                 </Link>
               </li>
               <li>
                 <Link
                   className='text-md text-white hover:underline'
-                  href='https://www.youtube.com/@antweb'
+                  href='https://www.youtube.com/@timesheet'
                   target='_blank'
                 >
-                  Journey
+                  {t("journey")}
                 </Link>
               </li>
             </ul>
           </div>
 
           <div className='flex flex-col w-full space-y-4'>
-            <h2 className='text-2xl font-semibold text-white mb-4'>Info</h2>
+            <h2 className='text-2xl font-semibold text-white mb-4'>{t("info")}</h2>
             <ul className='space-y-1'>
               {/* <li>
                 <Link className='text-md text-white hover:underline' href={AppRouter.ABOUTUS}>
@@ -119,32 +122,32 @@ const FooterComponent = () => {
               </li> */}
               <li>
                 <Link className='text-md text-white hover:underline' href='/terms-conditions'>
-                  Terms & Conditions
+                  {t("termsConditions")}
                 </Link>
               </li>
               <li>
                 <Link className='text-md text-white hover:underline' href='/privacy-policy'>
-                  Privacy Policy
+                  {t("privacyPolicy")}
                 </Link>
               </li>
               <li>
                 <Link className='text-md text-white hover:underline' href='/returns-refunds'>
-                  Returns & Refunds
+                  {t("returnsRefunds")}
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h2 className='text-2xl font-semibold text-white mb-4'>Follow Us On</h2>
+            <h2 className='text-2xl font-semibold text-white mb-4'>{t("followUs")}</h2>
             <div className='flex gap-6 justify-center md:justify-start'>
-              <Link href='https://www.youtube.com/@antweb' target='_blank'>
+              <Link href='https://www.youtube.com/@timesheet' target='_blank'>
                 <Image alt='YouTube' className='h-6' src={YoutubeImage.src} />
               </Link>
               <Link href='https://www.instagram.com/ant.web/' target='_blank'>
                 <Image alt='Instagram' className='h-6' src={InstagramImage.src} />
               </Link>
-              <Link href='https://www.facebook.com/antweb' target='_blank'>
+              <Link href='https://www.facebook.com/timesheet' target='_blank'>
                 <Image alt='Facebook' className='h-6' src={FacebookImage.src} />
               </Link>
             </div>
@@ -153,7 +156,7 @@ const FooterComponent = () => {
       </div>
 
       <div className='text-center mt-10 text-xs text-white opacity-80'>
-        <p>&copy; 2025 HATCH AND MARK INDIA LLP. All Rights Reserved.</p>
+        <p>&copy; 2025 HATCH AND MARK INDIA LLP. {t("allRightsReserved")}.</p>
       </div>
     </footer>
   );

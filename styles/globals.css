@@ -17,9 +17,10 @@
 :root {
   --color-bg-light: #e8f0ff;
   --color-bg-dark: #1f2937;
-  --bg-image: url("/world-map.svg");
   --color-pink-primary: #ec4899;
   --color-pink-hover: #db2777;
+  --color-primary-custom: #1890ff;
+  --bg-image: url("/world-map.svg");
 }
 
 :root[data-theme="light"] {
@@ -41,7 +42,9 @@
 }
 
 /* Global Card & Hardcoded Color Fixes */
-.card, .bg-white, .bg-gray-50 {
+.card,
+.bg-white,
+.bg-gray-50 {
   background-color: var(--card-bg) !important;
   border-color: var(--card-border) !important;
   border-radius: 0.75rem !important;
@@ -50,8 +53,8 @@
 
 /* Dashboard-level padding (avoid deep nesting) */
 main .card,
-section>.bg-white,
-section>.bg-gray-50 {
+section > .bg-white,
+section > .bg-gray-50 {
   padding: 1.5rem !important;
   /* padding match to image */
 }
@@ -78,6 +81,7 @@ section>.bg-gray-50 {
 
 @layer utilities {
   .bg-auth-light {
+    background-color: var(--color-bg-light);
     background-image: var(--bg-image);
     background-size: cover;
     background-position: center;
@@ -89,6 +93,21 @@ section>.bg-gray-50 {
     background-size: cover;
     background-position: center;
     background-repeat: repeat;
+  }
+
+  .btn-pink {
+    background-color: var(--color-pink-primary) !important;
+    border-color: var(--color-pink-primary) !important;
+    color: white !important;
+  }
+
+  .btn-pink:hover {
+    background-color: var(--color-pink-hover) !important;
+    border-color: var(--color-pink-hover) !important;
+  }
+
+  .text-primary-custom {
+    color: var(--color-primary-custom);
   }
 
   /* Override align-items for input as requested */

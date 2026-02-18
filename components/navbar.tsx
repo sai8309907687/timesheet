@@ -4,6 +4,7 @@ import React from 'react';
 import { RouterChange } from '@/utils/app.event';
 import { AppRouter } from '@/utils/app.router';
 import TypeIcon from '@/types/type.icon';
+import { useTranslation } from 'react-i18next';
 import { useSignals } from '@preact/signals-react/runtime';
 import Image from 'next/image';
 
@@ -11,6 +12,7 @@ import { SessionToken } from '@/utils/app.event';
 import { SettingsContent } from '@/modules/settings/SettingsContent';
 
 export const Navbar = ({ onToggle }: { onToggle: () => void }) => {
+  const { t } = useTranslation();
   useSignals();
   const [isSettingsOpen, setIsSettingsOpen] = React.useState(false);
 
@@ -48,7 +50,7 @@ export const Navbar = ({ onToggle }: { onToggle: () => void }) => {
             >
               <div className="w-10 h-10 relative">
                 <Image
-                  alt="Antweb logo"
+                  alt={t("welcome")}
                   src="/assets/antweb_logo.png"
                   fill
                   className="object-contain"
@@ -56,7 +58,7 @@ export const Navbar = ({ onToggle }: { onToggle: () => void }) => {
               </div>
 
               <span className="text-xl font-bold text-[#8fa4bc] tracking-wide">
-                Antweb
+                Timesheet
               </span>
             </div>
           </div>
@@ -83,10 +85,10 @@ export const Navbar = ({ onToggle }: { onToggle: () => void }) => {
 
             {!SessionToken.value && (
               <button
-                className='btn btn-secondary text-white text-xs font-montserrat-medium rounded-full px-4 py-2 hover:bg-blue-700 transition h-auto min-h-0 mr-2'
+                className='btn btn-pink text-white text-xs font-montserrat-medium rounded-full px-6 py-2 transition h-auto min-h-0 mr-2 border-none'
                 onClick={() => RouterChange(AppRouter.SIGN_IN)}
               >
-                Login
+                {t("login")}
               </button>
             )}
 
@@ -97,14 +99,14 @@ export const Navbar = ({ onToggle }: { onToggle: () => void }) => {
       {isSettingsOpen && (
         <dialog className='modal modal-open'>
           <div className='modal-box'>
-            <h3 className='font-bold text-lg mb-4'>Settings</h3>
+            <h3 className='font-bold text-lg mb-4'>{t("settings")}</h3>
             <SettingsContent />
             <div className='modal-action'>
-              <button className="btn" onClick={() => setIsSettingsOpen(false)}>Close</button>
+              <button className="btn" onClick={() => setIsSettingsOpen(false)}>{t("close")}</button>
             </div>
           </div>
           <form method='dialog' className='modal-backdrop'>
-            <button onClick={() => setIsSettingsOpen(false)}>close</button>
+            <button onClick={() => setIsSettingsOpen(false)}>{t("close")}</button>
           </form>
         </dialog>
 

@@ -25,9 +25,10 @@ type RouterType = {
 export const RouterEvent = signal({} as RouterType);
 export const SessionToken = signal<string | null>(AppStorage.getData(TOKEN) || null);
 
-export const SessionLang = signal<string>(AppStorage.getData(LANG) || "en-US");
+export const SessionLang = signal<string>(AppStorage.getData(LANG, true) || AppStorage.getData(LANG) || "en-US");
 
-export const ThemeMode = signal<string>("light");
+// Always start with light theme as default
+export const ThemeMode = signal<string>('light');
 export const RouterChange = (
   pathname: string,
   query?: Record<string, string>,

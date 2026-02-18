@@ -82,7 +82,7 @@ const clearData = () => {
 
 const envData = (key: string): string | null => {
   if (typeof window !== "undefined") {
-    return (window as Window & { env?: Record<string, string> })?.env?.['REACT_APP_ANTWEB_' + key.toUpperCase()] || null;
+    return (window as Window & { env?: Record<string, string> })?.env?.['REACT_APP_TIMESHEET_' + key.toUpperCase()] || null;
   }
   return null;
 };

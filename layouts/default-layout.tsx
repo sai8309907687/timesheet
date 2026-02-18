@@ -28,7 +28,7 @@ export default function DefaultLayout({
 
   return (
     <>
-      <div className='relative w-full flex flex-col h-[calc(100vh-10px)] overflow-hidden gap-2'>
+      <div className='relative w-full flex flex-col h-[calc(100vh-10px)] overflow-hidden gap-2 bg-[#e8f0ff] dark:bg-[#1f2937]'>
         <Navbar onToggle={() => setToggled(!toggled)} />
         <main className="container mx-auto flex-grow h-full overflow-hidden">
           <div className="flex gap-2 h-full overflow-hidden">

@@ -8,7 +8,7 @@ export default function ComingSoonComponent() {
         <Image
           alt='logo'
           className='object-contain'
-          src='https://antweb.s3.ap-south-1.amazonaws.com/common/antweb-logo.svg'
+          src='https://timesheet.s3.ap-south-1.amazonaws.com/common/timesheet-logo.svg'
           fill
         />
       </div>
@@ -16,7 +16,7 @@ export default function ComingSoonComponent() {
         <Image
           alt='name'
           className='object-contain'
-          src='https://antweb.s3.ap-south-1.amazonaws.com/common/antweb-name.svg'
+          src='https://timesheet.s3.ap-south-1.amazonaws.com/common/timesheet-name.svg'
 
           fill
         />

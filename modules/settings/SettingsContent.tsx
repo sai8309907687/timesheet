@@ -24,8 +24,8 @@ export const SettingsContent = () => {
 
     // Theme options for Light/Dark mode
     const themeOptions = [
-        { key: 'light', label: 'Light' },
-        { key: 'dark', label: 'Dark' },
+        { key: 'light', label: t('light') },
+        { key: 'dark', label: t('dark') },
     ];
 
     /**
@@ -34,6 +34,8 @@ export const SettingsContent = () => {
      */
     const handleLanguageChange = (code: string) => {
         i18n.changeLanguage(code);
+        SessionLang.value = code;
+        AppStorage.setData(LANG, code, true);
     };
 
     /**
@@ -56,22 +58,22 @@ export const SettingsContent = () => {
 
     return (
         <div className="space-y-6 pt-2">
-
-
-
+            {/* Theme Row */}
             <div className="flex justify-between items-center gap-2">
                 <div className="w-[25%]">
                     <h2 className="text-md font-semibold">{t("theme")}</h2>
                 </div>
                 <div className="w-[75%]">
                     <TypeSelect
-                        value={SessionLang.value}
-                        options={languageOptions}
-                        onChange={handleLanguageChange}
-                        placeholder="Select Language"
+                        value={ThemeMode.value}
+                        options={themeOptions}
+                        onChange={handleThemeChange}
+                        placeholder="Select Theme"
                     />
                 </div>
             </div>
+
+            {/* Language Row */}
             <div className="flex justify-between items-center gap-2">
                 <div className="w-[25%]">
                     <h2 className="text-md font-semibold flex items-center gap-2">
@@ -80,10 +82,10 @@ export const SettingsContent = () => {
                 </div>
                 <div className="w-[75%]">
                     <TypeSelect
-                        value={ThemeMode.value}
-                        options={themeOptions}
-                        onChange={handleThemeChange}
-                        placeholder="Select Theme"
+                        value={SessionLang.value}
+                        options={languageOptions}
+                        onChange={handleLanguageChange}
+                        placeholder="Select Language"
                     />
                 </div>
             </div>

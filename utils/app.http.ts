@@ -51,7 +51,7 @@ export default class AppHttp {
     return {
       ["Content-Type"]: "application/json",
       "x-tenant-id": getTenantId(),
-      // "x-token": process.env.ANTWEB_API_TOKEN || "TEST+MY_PROJECT1+MKJWQZI1",
+      // "x-token": process.env.TIMESHEET_API_TOKEN || "TEST+MY_PROJECT1+MKJWQZI1",
       authorization: AppStorage.getData(TOKEN),
     };
   }
@@ -97,12 +97,14 @@ export default class AppHttp {
 export const MsUrl = {
   menuAccess: "/menu_access/search",
   // auth: "/astropeace-auth",
-  base: "/antweb-base",
+  base: "/timesheet-base",
   // horoscope: "/astropeace-horoscope",
   // language: "/astropeace-lang",
   // payments: "/astropeace-payments",
-  sor: "/antweb-sor",
-  access: "/antweb-access",
+  account: "/timesheet-account",
+  auth: "/timesheet-auth",
+  sor: "/timesheet-sor",
+  access: "/timesheet-access",
 };
 
 export const ApiUrl = {
