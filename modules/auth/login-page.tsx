@@ -9,7 +9,7 @@ import { isSinginLoading, onSingin } from './common/services';
 import { LoginValidate } from './common/validate';
 
 import { AuthLayout } from '@/layouts/auth-layout';
-import { TenantModal } from './tenant-modal';
+// import { TenantModal } from './tenant-modal';
 // import { AuthState } from '@/modules/signin/common/service';
 // import { fetchMenuAccess } from '@/modules/menu/common/service';
 import TypeButton from '@/types/type.button';
@@ -23,7 +23,7 @@ import { checkLoginUser } from '@/utils/app.util';
 export function LoginPage() {
   const { t } = useTranslation();
   const initialTenant = checkHasTenant();
-  const [showTenantModal, setShowTenantModal] = useState(!initialTenant);
+  // const [showTenantModal, setShowTenantModal] = useState(!initialTenant);
   const [hasTenant, setHasTenant] = useState(initialTenant);
 
   useEffect(() => {
@@ -170,7 +170,7 @@ export function LoginPage() {
                   </span>
                 </div>
 
-                {!hasTenant && (
+                {/* {!hasTenant && (
                   <div className='text-center mt-2'>
                     <sub
                       className='text-primary cursor-pointer hover:underline font-semibold'
@@ -179,7 +179,7 @@ export function LoginPage() {
                       {t("changeTenant")}
                     </sub>
                   </div>
-                )}
+                )} */}
               </div>
             </form>
           </div>
@@ -187,11 +187,11 @@ export function LoginPage() {
       </div>
 
       {/* Tenant Modal */}
-      <TenantModal
+      {/* <TenantModal
         show={showTenantModal}
         onClose={() => setShowTenantModal(false)}
         onSuccess={() => setHasTenant(true)}
-      />
+      /> */}
     </AuthLayout>
   );
 }
