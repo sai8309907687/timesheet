@@ -18,30 +18,30 @@ export const generateProjectData = () => {
 
 export const summaryCards = [
     {
-        title: "Active Employees",
+        titleKey: "dashboardActiveEmployeesTitle",
         value: "247",
-        subtitle: "+12 this month",
+        subtitleKey: "dashboardActiveEmployeesSubtitle",
         icon: "users",
         color: "bg-blue-100 text-blue-600"
     },
     {
-        title: "Pending Approvals",
+        titleKey: "dashboardPendingApprovalsTitle",
         value: "18",
-        subtitle: "Across all managers",
+        subtitleKey: "dashboardPendingApprovalsSubtitle",
         icon: "clock",
         color: "bg-yellow-100 text-yellow-600"
     },
     {
-        title: "Total Hours (MTD)",
+        titleKey: "dashboardTotalHoursTitle",
         value: "9,840",
-        subtitle: "+8% from last month",
+        subtitleKey: "dashboardTotalHoursSubtitle",
         icon: "trending-up",
         color: "bg-purple-100 text-purple-600"
     },
     {
-        title: "Billable Hours",
+        titleKey: "dashboardBillableHoursTitle",
         value: "7,230",
-        subtitle: "73% utilization",
+        subtitleKey: "dashboardBillableHoursSubtitle",
         icon: "dollar-sign",
         color: "bg-green-100 text-green-600"
     }
@@ -49,20 +49,20 @@ export const summaryCards = [
 
 export const bottomCards = [
     {
-        title: "Clients",
+        titleKey: "dashboardClientsLabel",
         value: "42"
     },
     {
-        title: "Projects",
+        titleKey: "dashboardProjectsLabel",
         value: "128"
     },
     {
-        title: "Task Codes",
+        titleKey: "dashboardTaskCodesLabel",
         value: "35"
     },
     {
-        title: "Reports",
-        value: "View",
+        titleKey: "dashboardReportsLabel",
+        valueKey: "view",
         isLink: true
     }
 ];

@@ -39,5 +39,22 @@
   "termsConditions": "Terms & Conditions",
   "privacyPolicy": "Privacy Policy",
   "returnsRefunds": "Returns & Refunds",
-  "allRightsReserved": "All Rights Reserved"
+  "allRightsReserved": "All Rights Reserved",
+  "adminDashboardTitle": "Admin Dashboard",
+  "adminDashboardSubtitle": "System overview and analytics",
+  "dashboardActiveEmployeesTitle": "Active Employees",
+  "dashboardActiveEmployeesSubtitle": "+12 this month",
+  "dashboardPendingApprovalsTitle": "Pending Approvals",
+  "dashboardPendingApprovalsSubtitle": "Across all managers",
+  "dashboardTotalHoursTitle": "Total Hours (MTD)",
+  "dashboardTotalHoursSubtitle": "+8% from last month",
+  "dashboardBillableHoursTitle": "Billable Hours",
+  "dashboardBillableHoursSubtitle": "73% utilization",
+  "dashboardHoursByClientTitle": "Hours by Client",
+  "dashboardHoursByProjectTypeTitle": "Hours by Project Type",
+  "dashboardClientsLabel": "Clients",
+  "dashboardProjectsLabel": "Projects",
+  "dashboardTaskCodesLabel": "Task Codes",
+  "dashboardReportsLabel": "Reports",
+  "view": "View"
 }

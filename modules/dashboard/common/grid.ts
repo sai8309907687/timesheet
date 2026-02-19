@@ -1,10 +1,17 @@
-import { AgChartOptions } from "ag-charts-community";
+export function getBarChartOptions(data: any[], theme: "light" | "dark"): any {
+    const isDark = theme === "dark";
+    const backgroundColor = isDark ? "#000000" : "#FFFFFF";
+    const primaryTextColor = isDark ? "#FFFFFF" : "#111827";
+    const secondaryTextColor = isDark ? "#9CA3AF" : "#6B7280";
 
-export function getBarChartOptions(data: any[]): AgChartOptions {
     return {
         data: data,
+        background: {
+            fill: backgroundColor,
+        },
         title: {
             text: "Hours by Client",
+            color: primaryTextColor,
         },
         series: [
             {
@@ -18,23 +25,46 @@ export function getBarChartOptions(data: any[]): AgChartOptions {
             {
                 type: "category",
                 position: "bottom",
+                label: {
+                    color: secondaryTextColor,
+                },
             },
             {
                 type: "number",
                 position: "left",
                 title: {
                     text: "Hours",
+                    color: secondaryTextColor,
+                },
+                label: {
+                    color: secondaryTextColor,
                 },
             },
         ],
+        legend: {
+            item: {
+                label: {
+                    color: primaryTextColor,
+                },
+            },
+        },
     };
 }
 
-export function getPieChartOptions(data: any[]): AgChartOptions {
+export function getPieChartOptions(data: any[], theme: "light" | "dark"): any {
+    const isDark = theme === "dark";
+    const backgroundColor = isDark ? "#000000" : "#FFFFFF";
+    const primaryTextColor = isDark ? "#FFFFFF" : "#111827";
+    const secondaryTextColor = isDark ? "#D1D5DB" : "#4B5563";
+
     return {
         data: data,
+        background: {
+            fill: backgroundColor,
+        },
         title: {
             text: "Hours by Project Type",
+            color: primaryTextColor,
         },
         series: [
             {
@@ -43,10 +73,17 @@ export function getPieChartOptions(data: any[]): AgChartOptions {
                 calloutLabelKey: "type",
                 sectorLabelKey: "hours",
                 sectorLabel: {
-                    color: "white",
+                    color: primaryTextColor,
                     fontWeight: "bold",
                 },
             },
         ],
+        legend: {
+            item: {
+                label: {
+                    color: secondaryTextColor,
+                },
+            },
+        },
     };
 }
