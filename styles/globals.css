@@ -53,8 +53,8 @@
 
 /* Dashboard-level padding (avoid deep nesting) */
 main .card,
-section > .bg-white,
-section > .bg-gray-50 {
+section>.bg-white,
+section>.bg-gray-50 {
   padding: 1.5rem !important;
   /* padding match to image */
 }
@@ -114,4 +114,8 @@ section > .bg-gray-50 {
   .input {
     align-items: unset;
   }
+}
+
+.bg-white {
+  border-radius: 0 !important;
 }
